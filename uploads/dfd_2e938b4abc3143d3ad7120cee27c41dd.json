@@ -1,0 +1,160 @@
+{
+  "project_name": "DocFlow System",
+  "diagram_type": "DFD",
+  "levels": [
+    {
+      "level": 0,
+      "description": "DFD Level 0: DocFlow System Context Diagram",
+      "external_entities": [
+        {
+          "id": "E1",
+          "name": "Patient",
+          "description": "Patient user interacting with DocFlow System"
+        },
+        {
+          "id": "E2",
+          "name": "Doctor",
+          "description": "Medical doctor interacting with DocFlow System"
+        },
+        {
+          "id": "E3",
+          "name": "Admin",
+          "description": "System Administrator"
+        },
+        {
+          "id": "E4",
+          "name": "Employer / Receptionist",
+          "description": "Receptionist or Employer staff user"
+        }
+      ],
+      "processes": [
+        {
+          "id": "P0",
+          "name": "DocFlow System",
+          "parent_process": null,
+          "description": "Central process for DocFlow System context level"
+        }
+      ],
+      "data_stores": [],
+      "data_flows": [
+        {
+          "id": "F1",
+          "source": "E1",
+          "destination": "P0",
+          "data": "Registration Details",
+          "description": "Patient provides registration details"
+        },
+        {
+          "id": "F2",
+          "source": "E1",
+          "destination": "P0",
+          "data": "Appointment Request",
+          "description": "Patient requests an appointment"
+        },
+        {
+          "id": "F3",
+          "source": "E1",
+          "destination": "P0",
+          "data": "Payment Info",
+          "description": "Patient provides payment information"
+        },
+        {
+          "id": "F4",
+          "source": "P0",
+          "destination": "E1",
+          "data": "Queue Status",
+          "description": "System updates queue status for patient"
+        },
+        {
+          "id": "F5",
+          "source": "P0",
+          "destination": "E1",
+          "data": "Confirmation",
+          "description": "System sends appointment or registration confirmation"
+        },
+        {
+          "id": "F6",
+          "source": "E2",
+          "destination": "P0",
+          "data": "Availability",
+          "description": "Doctor provides availability information"
+        },
+        {
+          "id": "F7",
+          "source": "P0",
+          "destination": "E2",
+          "data": "Patient Records",
+          "description": "System provides patient records to doctor"
+        },
+        {
+          "id": "F8",
+          "source": "E2",
+          "destination": "P0",
+          "data": "System Reports",
+          "description": "Doctor submits or requests system reports"
+        },
+        {
+          "id": "F9",
+          "source": "P0",
+          "destination": "E3",
+          "data": "System Reports",
+          "description": "System generates reports for admin"
+        },
+        {
+          "id": "F10",
+          "source": "E3",
+          "destination": "P0",
+          "data": "Availability",
+          "description": "Admin updates availability settings"
+        },
+        {
+          "id": "F11",
+          "source": "E3",
+          "destination": "P0",
+          "data": "Patient Records",
+          "description": "Admin updates or manages patient records"
+        },
+        {
+          "id": "F12",
+          "source": "E3",
+          "destination": "P0",
+          "data": "System Reports",
+          "description": "Admin submits report parameters or configurations"
+        },
+        {
+          "id": "F13",
+          "source": "E4",
+          "destination": "P0",
+          "data": "Patient Info",
+          "description": "Employer/Receptionist inputs patient information"
+        },
+        {
+          "id": "F14",
+          "source": "E4",
+          "destination": "P0",
+          "data": "Appointment Status",
+          "description": "Employer/Receptionist checks or sets appointment status"
+        },
+        {
+          "id": "F15",
+          "source": "P0",
+          "destination": "E4",
+          "data": "Patient Info",
+          "description": "System returns patient info to Employer/Receptionist"
+        },
+        {
+          "id": "F16",
+          "source": "E4",
+          "destination": "P0",
+          "data": "Patient Info",
+          "description": "Employer/Receptionist updates patient information"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "created_from": "image",
+    "confidence": 0.95,
+    "notes": "Level 0 DFD context diagram for DocFlow System accurately parsed."
+  }
+}

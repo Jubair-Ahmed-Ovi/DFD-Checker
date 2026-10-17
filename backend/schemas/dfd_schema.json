@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["project_name", "diagram_type", "levels", "metadata"],
+  "properties": {
+    "project_name": {"type": "string"},
+    "diagram_type": {"const": "DFD"},
+    "levels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["level", "description", "external_entities", "processes", "data_stores", "data_flows"],
+        "properties": {
+          "level": {"type": "integer", "minimum": 0},
+          "description": {"type": "string"},
+          "expanded_process": {"type": "string"},
+          "external_entities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "name", "description"],
+              "properties": {"id": {"type": "string", "pattern": "^E[0-9]+$"}, "name": {"type": "string"}, "description": {"type": "string"}}
+            }
+          },
+          "processes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "name", "parent_process", "description"],
+              "properties": {"id": {"type": "string", "pattern": "^P[0-9]+(\\.[0-9]+)*$"}, "name": {"type": "string"}, "parent_process": {"type": ["string", "null"]}, "description": {"type": "string"}}
+            }
+          },
+          "data_stores": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "name", "description"],
+              "properties": {"id": {"type": "string", "pattern": "^D[0-9]+$"}, "name": {"type": "string"}, "description": {"type": "string"}}
+            }
+          },
+          "data_flows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["id", "source", "destination", "data", "description"],
+              "properties": {"id": {"type": "string", "pattern": "^F[0-9]+$"}, "source": {"type": "string"}, "destination": {"type": "string"}, "data": {"type": "string"}, "description": {"type": "string"}}
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_from", "confidence", "notes"],
+      "properties": {"created_from": {"type": "string"}, "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "notes": {"type": "string"}}
+    }
+  }
+}

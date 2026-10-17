@@ -1,0 +1,88 @@
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:#f5f7fb;color:#172033}.topbar{height:68px;background:#101827;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 7%}.brand{font-size:22px;font-weight:800}.brand span{color:#70a1ff}.badge{background:#1d2a42;padding:7px 12px;border-radius:999px;font-size:12px}.container{max-width:1050px;margin:0 auto;padding:55px 20px}.hero{text-align:center;margin-bottom:32px}.hero h1{font-size:42px;line-height:1.1;margin:0 0 14px}.hero p{max-width:720px;margin:auto;color:#667085;line-height:1.6}.card,.result{background:#fff;border:1px solid #e6eaf0;border-radius:18px;box-shadow:0 10px 30px rgba(16,24,40,.06)}.card{padding:28px}.dropzone{border:2px dashed #c9d2e2;border-radius:16px;text-align:center;padding:55px 20px;transition:.2s}.dropzone.drag{border-color:#3b82f6;background:#f5f9ff}.upload-icon{width:50px;height:50px;border-radius:50%;background:#eef4ff;display:grid;place-items:center;margin:0 auto 15px;font-size:26px;color:#3478f6}.dropzone h2{margin:8px 0}.dropzone p{color:#7b8495}.btn{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer}.btn:disabled{opacity:.5;cursor:not-allowed}.primary{background:#246bfe;color:#fff}.secondary{background:#eef2f7;color:#263247}.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}.file-info{margin-top:15px;font-size:14px;color:#344054}.status{margin-top:15px;min-height:22px;color:#475467}.result{margin-top:25px;padding:24px}.result-head{display:flex;justify-content:space-between;gap:20px;align-items:center}.result-head h2{margin:0}.result-head p{color:#667085;font-size:13px}.result-head .actions{margin:0}.result textarea{width:100%;min-height:650px;margin-top:18px;border:1px solid #d8dee8;border-radius:12px;padding:18px;font:13px/1.55 Consolas,Monaco,monospace;background:#0f172a;color:#d9e4f5;resize:vertical}.validation{margin-top:12px;font-size:14px}.ok{color:#147a43}.bad{color:#b42318}.hidden{display:none}@media(max-width:700px){.hero h1{font-size:30px}.result-head{flex-direction:column;align-items:flex-start}.result-head .actions{flex-wrap:wrap}}
+/* DFD correctness report */
+.audit-section {
+  margin-top: 24px;
+}
+
+.audit-heading {
+  margin-bottom: 14px;
+}
+
+.audit-result {
+  margin-top: 12px;
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #1f2937;
+}
+
+.audit-summary {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.audit-valid {
+  border-left: 5px solid #16a34a;
+}
+
+.audit-invalid {
+  border-left: 5px solid #dc2626;
+}
+
+.audit-review {
+  border-left: 5px solid #d97706;
+}
+
+.audit-counts {
+  color: #4b5563;
+  font-size: 13px;
+}
+
+.audit-violations {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.audit-violation {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.audit-violation h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.severity-error {
+  border-left: 4px solid #dc2626;
+}
+
+.severity-warning {
+  border-left: 4px solid #d97706;
+}
+
+.audit-message,
+.audit-suggestion {
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+
+.audit-suggestion {
+  color: #166534;
+  font-size: 14px;
+}
+
+.audit-clean {
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+#auditBtn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DFD Image → JSON</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">DFD<span>→JSON</span></div>
+    <div class="badge">AI Converter</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Convert any DFD image into structured JSON</h1>
+      <p>
+        Upload a DFD image, let AI detect entities, processes, data stores
+        and flows, then edit, validate or download your JSON.
+      </p>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="card">
+      <div id="dropzone" class="dropzone">
+        <div class="upload-icon">↑</div>
+        <h2>Drop your DFD here</h2>
+        <p>PNG, JPG, JPEG, WEBP, BMP, TIFF, GIF, SVG or PDF</p>
+
+        <input
+          id="fileInput"
+          type="file"
+          accept=".png,.jpg,.jpeg,.webp,.bmp,.tif,.tiff,.gif,.svg,.pdf"
+          hidden
+        />
+
+        <button id="chooseBtn" class="btn secondary" type="button">
+          Choose file
+        </button>
+
+        <div id="fileInfo" class="file-info"></div>
+      </div>
+
+      <div class="actions">
+        <button
+          id="convertBtn"
+          class="btn primary"
+          type="button"
+          disabled
+        >
+          Convert to JSON
+        </button>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Generated JSON Section -->
+    <section id="result" class="result hidden">
+      <div class="result-head">
+        <div>
+          <h2>Generated JSON</h2>
+          <p id="resultName"></p>
+        </div>
+
+        <div class="actions">
+          <button id="copyBtn" class="btn secondary" type="button">
+            Copy
+          </button>
+
+          <button id="validateBtn" class="btn secondary" type="button">
+            Validate JSON
+          </button>
+
+          <button id="auditBtn" class="btn secondary" type="button">
+            Check DFD Rules
+          </button>
+
+          <button id="downloadBtn" class="btn primary" type="button">
+            Download JSON
+          </button>
+        </div>
+      </div>
+
+      <textarea
+        id="jsonEditor"
+        spellcheck="false"
+        aria-label="Edit generated DFD JSON"
+      ></textarea>
+
+      <!-- JSON Schema Validation Results -->
+      <section class="validation-section">
+        <h3>JSON Validation</h3>
+        <div
+          id="validation"
+          class="validation"
+          role="status"
+          aria-live="polite"
+        ></div>
+      </section>
+
+      <!-- DFD Rule Audit Results -->
+      <section class="audit-section">
+        <div class="audit-heading">
+          <div>
+            <h3>DFD Correctness Report</h3>
+            <p>
+              Check the diagram against structural DFD rules for Levels 0–3.
+            </p>
+          </div>
+        </div>
+
+        <div
+          id="auditResult"
+          class="audit-result hidden"
+          role="status"
+          aria-live="polite"
+        ></div>
+      </section>
+    </section>
+  </main>
+
+ <script src="/js/app.js?v=2"></script>
+</body>
+</html>
